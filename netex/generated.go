@@ -30,7 +30,7 @@ type Extensions struct {
 // CoordinatesStructure represents the CoordinatesStructure element
 // Type for GM Coordinates.
 type CoordinatesStructure struct {
-	Value []string `xml:"value" json:"value"`
+	Value []string `xml:",chardata" json:"value"`
 }
 
 // LocationStructure represents the LocationStructure element
@@ -75,13 +75,13 @@ type LineShapeStructure struct {
 // SrsName represents the SrsName element
 // GML Spatial coordinate reference system.
 type SrsName struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // NaturalLanguageStringStructure represents the NaturalLanguageStringStructure element
 // Tyoe for a string in a specified language.
 type NaturalLanguageStringStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	Lang *string `xml:"lang,attr,omitempty" json:"lang,omitempty"`
 }
 
@@ -89,14 +89,14 @@ type NaturalLanguageStringStructure struct {
 // @lang. ISO language code (default is 'en')
 // A string containing a phrase in a natural language name that requires at least one character of text and forbids certain reserved characters.
 type NaturalLanguagePlaceNameStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	Lang *string `xml:"lang,attr,omitempty" json:"lang,omitempty"`
 }
 
 // ParticipantRefStructure represents the ParticipantRefStructure element
 // Reference to Unique identifier of participant.
 type ParticipantRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // CommunicationsTransportMethodEnumeration represents the CommunicationsTransportMethodEnumeration enumeration
@@ -134,7 +134,7 @@ const (
 // MessageQualifierStructure represents the MessageQualifierStructure element
 // Unique identifier of a message within SIRI functional service type and participant.
 type MessageQualifierStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // MessageRefStructure represents the MessageRefStructure element
@@ -146,37 +146,37 @@ type MessageRefStructure struct {
 // SubscriptionQualifierStructure represents the SubscriptionQualifierStructure element
 // Type Unique identifier of Subscription within Participant.
 type SubscriptionQualifierStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // SubscriptionFilterStructure represents the SubscriptionFilterStructure element
 // Type Unique identifier of Subscription Filter within Participant.
 type SubscriptionFilterStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // SubscriptionFilterRefStructure represents the SubscriptionFilterRefStructure element
 // Type Unique identifier of Subscription Filter within Participant.
 type SubscriptionFilterRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // ItemRefStructure represents the ItemRefStructure element
 // Type for reference to an Item.
 type ItemRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // CapabilityRefStructure represents the CapabilityRefStructure element
 // Type for capability ref.
 type CapabilityRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // RequestTimestamp represents the RequestTimestamp element
 // Timestamp on request.
 type RequestTimestamp struct {
-	Value time.Time `xml:"value" json:"value"`
+	Value time.Time `xml:",chardata" json:"value"`
 }
 
 // RequestorRef represents the RequestorRef element
@@ -188,7 +188,7 @@ type RequestorRef struct {
 // ResponseTimestamp represents the ResponseTimestamp element
 // Time individual response element was created.
 type ResponseTimestamp struct {
-	Value time.Time `xml:"value" json:"value"`
+	Value time.Time `xml:",chardata" json:"value"`
 }
 
 // IncludeTranslations represents the IncludeTranslations element
@@ -196,7 +196,7 @@ type ResponseTimestamp struct {
 // 
 // Where multiple values are returned The first element returned ill be used as the default value.
 type IncludeTranslations struct {
-	Value bool `xml:"value" json:"value"`
+	Value bool `xml:",chardata" json:"value"`
 }
 
 // ErrorConditionStructure represents the ErrorConditionStructure element
@@ -247,7 +247,7 @@ type ErrorConditionElementStructure struct {
 // ErrorDescriptionStructure represents the ErrorDescriptionStructure element
 // Type for Description of an error.
 type ErrorDescriptionStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // ErrorCodeStructure represents the ErrorCodeStructure element
@@ -967,7 +967,7 @@ type AbstractFunctionalServiceDelivery struct {
 // Status represents the Status element
 // Whether the request was processed successfully or not. Default is 'true'.
 type Status struct {
-	Value bool `xml:"value" json:"value"`
+	Value bool `xml:",chardata" json:"value"`
 }
 
 // ProducerRequest represents the ProducerRequest element
@@ -1610,7 +1610,7 @@ const (
 // CodespaceRefStructure represents the CodespaceRefStructure element
 // Type for a reference to a CODESPACE.
 type CodespaceRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Identifier of CODESPACE i.e. namespace of identifiers.
 	Ref string `xml:"ref,attr" json:"ref"`
 }
@@ -1618,7 +1618,7 @@ type CodespaceRefStructure struct {
 // ClassRefStructure represents the ClassRefStructure element
 // Type for a reference to the Class of a ENTITY.
 type ClassRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Name of referenced Class.
 	NameOfClass string `xml:"nameOfClass,attr" json:"nameOfClass"`
 }
@@ -1723,7 +1723,7 @@ const (
 // SimpleObjectRefStructure represents the SimpleObjectRefStructure element
 // Type for a simple object reference.
 type SimpleObjectRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Identifier of referenced entity.
 	Ref string `xml:"ref,attr" json:"ref"`
 }
@@ -1731,7 +1731,7 @@ type SimpleObjectRefStructure struct {
 // VersionOfObjectRefStructure represents the VersionOfObjectRefStructure element
 // Type for a versioned reference to a NeTEx Object.
 type VersionOfObjectRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Name of Class of the referenced entity. Allows reflection. Fixed for each entity type.
 	NameOfRefClass *string `xml:"nameOfRefClass,attr,omitempty" json:"nameOfRefClass,omitempty"`
 	// Date reference was first created.
@@ -1771,7 +1771,7 @@ type DataSourceRefStructure struct {
 // TypeOfVersionRefStructure represents the TypeOfVersionRefStructure element
 // Type for a TYPE OF VERSION.
 type TypeOfVersionRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Name of Class of the referenced entity. Allows reflection. Fixed for each entity type.
 	NameOfRefClass *string `xml:"nameOfRefClass,attr,omitempty" json:"nameOfRefClass,omitempty"`
 	// Date reference was first created.
@@ -1791,7 +1791,7 @@ type TypeOfVersionRefStructure struct {
 // ExternalObjectRefStructure represents the ExternalObjectRefStructure element
 // Type for a reference.to an external object.
 type ExternalObjectRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Type of reference.
 	Type *string `xml:"type,attr,omitempty" json:"type,omitempty"`
 	// Reference to an entity in an external system.
@@ -2455,7 +2455,7 @@ type TypeOfEntityRefsRelStructure struct {
 // RelationshipRefStructure represents the RelationshipRefStructure element
 // Type for a reference to a Relationship.
 type RelationshipRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Name of referenced Class.
 	NameOfClass string `xml:"nameOfClass,attr" json:"nameOfClass"`
 }
@@ -2907,7 +2907,7 @@ const (
 // PrivateCodeStructure represents the PrivateCodeStructure element
 // Type describing a private code.
 type PrivateCodeStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Nature of code.
 	Type *string `xml:"type,attr,omitempty" json:"type,omitempty"`
 }
@@ -3013,7 +3013,7 @@ type InfoLinksRelStructure struct {
 // InfoLinkStructure represents the InfoLinkStructure element
 // Type for Info Link.
 type InfoLinkStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Functional classifcation of an info link.
 	TypeOfInfoLink *TypeOfInfoLinkEnumeration `xml:"typeOfInfoLink,attr,omitempty" json:"typeOfInfoLink,omitempty"`
 	// Software platform for which link is targeted, e.g. iOS, Android.
@@ -3102,7 +3102,7 @@ type OpenTimestampRangeStructure struct {
 // gml:CodeType is a generalized type to be used for a term, keyword or name.
 // It adds a XML attribute codeSpace to a term, where the value of the codeSpace attribute (if present) shall indicate a dictionary, thesaurus, classification scheme, authority, or pattern for the term.
 type CodeType struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	CodeSpace *string `xml:"codeSpace,attr,omitempty" json:"codeSpace,omitempty"`
 }
 
@@ -3116,7 +3116,7 @@ type CodeWithAuthorityType struct {
 // MeasureType represents the MeasureType element
 // gml:MeasureType supports recording an amount encoded as a value of XML Schema double, together with a units of measure indicated by an attribute uom, short for "units of measure". The value of the uom attribute identifies a reference system for the amount, usually a ratio or interval scale.
 type MeasureType struct {
-	Value float64 `xml:"value" json:"value"`
+	Value float64 `xml:",chardata" json:"value"`
 	Uom string `xml:"uom,attr" json:"uom"`
 }
 
@@ -3129,7 +3129,7 @@ type MeasureType struct {
 // ts        	symbol used to separate tuples or coordinate strings (default=" " a space)
 // Since it is based on the XML Schema string type, CoordinatesType may be used in the construction of tables of tuples or arrays of tuples, including ones that contain mixed text and numeric values.
 type CoordinatesType struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	Decimal *string `xml:"decimal,attr,omitempty" json:"decimal,omitempty"`
 	Cs *string `xml:"cs,attr,omitempty" json:"cs,omitempty"`
 	Ts *string `xml:"ts,attr,omitempty" json:"ts,omitempty"`
@@ -3270,7 +3270,7 @@ type AbstractInlineProperty struct {
 // ReversePropertyName represents the reversePropertyName element
 // If the value of an object property is another object and that object contains also a property for the association between the two objects, then this name of the reverse property may be encoded in a gml:reversePropertyName element in an appinfo annotation of the property element to document the constraint between the two properties. The value of the element shall contain the qualified name of the property element.
 type ReversePropertyName struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // DescriptionReference represents the descriptionReference element
@@ -3293,22 +3293,22 @@ type Identifier struct {
 
 // TargetElement represents the targetElement element
 type TargetElement struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // AssociationName represents the associationName element
 type AssociationName struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // DefaultCodeSpace represents the defaultCodeSpace element
 type DefaultCodeSpace struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // GmlProfileSchema represents the gmlProfileSchema element
 type GmlProfileSchema struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // AbstractGeometryType represents the AbstractGeometryType element
@@ -3756,7 +3756,7 @@ type BoundingBoxStructure2 struct {
 // SrsName2 represents the SrsName2 element
 // Name of GML Spatial coordinate Reference system.
 type SrsName2 struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // EmptyType2 represents the EmptyType2 enumeration
@@ -3771,7 +3771,7 @@ const (
 // MultilingualString represents the MultilingualString element
 // Type for a string in a specified language.
 type MultilingualString struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Language of string contents.
 	Lang *string `xml:"lang,attr,omitempty" json:"lang,omitempty"`
 	// Resource id of string.
@@ -5121,7 +5121,7 @@ type KeyValueStructure struct {
 	// Identifier of value e.g. System.
 	Key string `xml:"Key" json:"Key"`
 	// Value for alternative key.
-	Value string `xml:"Value" json:"Value"`
+	Value string `xml:",chardata" json:"value"`
 	// Identifier of type of key.
 	TypeOfKey *string `xml:"typeOfKey,attr,omitempty" json:"typeOfKey,omitempty"`
 }
@@ -6766,7 +6766,7 @@ const (
 // CountryRefStructure represents the CountryRefStructure element
 // Type for a reference to a Country Identifier.
 type CountryRefStructure struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 	// Iso 3166-1 Two Character country code.
 	Ref *IanaCountryTldEnumeration `xml:"ref,attr,omitempty" json:"ref,omitempty"`
 	// Iso3166-3 Three character country code
@@ -8882,67 +8882,67 @@ const (
 // WheelchairAccess represents the WheelchairAccess element
 // Whether a PLACE is wheelchair accessible.
 type WheelchairAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // StepFreeAccess represents the StepFreeAccess element
 // Whether a PLACE has step free access.
 type StepFreeAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // StairFreeAccess represents the StairFreeAccess element
 // Whether a PLACE has stair free access, in comparison with step free access one single step in the route is allowed.
 type StairFreeAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // EscalatorFreeAccess represents the EscalatorFreeAccess element
 // Whether a PLACE has escalator free access.
 type EscalatorFreeAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // LiftFreeAccess represents the LiftFreeAccess element
 // Whether a PLACE has lift free access.
 type LiftFreeAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // RampFreeAccess represents the RampFreeAccess element
 // Whether a PLACE has ramp free access. Ramp free isn't necessary absolute. If a ramp is not steep, then a PLACE can still be considered ramp free.
 type RampFreeAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // LevelAccessIntoVehicle represents the LevelAccessIntoVehicle element
 // Whether the platform is high enough and gap is small enough for level access into vehicle. At least at a designated wheelchair door position the gap between platform and vehicle floor (of level access vehicle) does not exceed 75 mm measured horizontally and 50 mm measured vertically including sliding step (according to PRM TSI).
 type LevelAccessIntoVehicle struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // AudibleSignalsAvailable represents the AudibleSignalsAvailable element
 // Whether a PLACE has audible signals for the visually impaired.
 type AudibleSignalsAvailable struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // VisualSignsAvailable represents the VisualSignsAvailable element
 // Whether a PLACE has visual signals available for the free access.
 type VisualSignsAvailable struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // TactileGuidanceAvailable represents the TactileGuidanceAvailable element
 // Whether the Place has tactile guidance.
 type TactileGuidanceAvailable struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // GuideDogAccess represents the GuideDogAccess element
 // Whether a PLACE allows guide dog access.
 type GuideDogAccess struct {
-	Value LimitationStatusEnumeration `xml:"value" json:"value"`
+	Value LimitationStatusEnumeration `xml:",chardata" json:"value"`
 }
 
 // LimitationRefStructure represents the LimitationRefStructure element
@@ -9502,7 +9502,7 @@ type AdministrativeZoneRef struct {
 // CodespaceAssignmentRef represents the CodespaceAssignmentRef element
 // Reference to a CODESPACE ASSIGNMENT.
 type CodespaceAssignmentRef struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // TypeOfCodespaceAssignmentRef represents the TypeOfCodespaceAssignmentRef element
@@ -11046,25 +11046,25 @@ type ModeRefStructure struct {
 // AccessMode represents the AccessMode element
 // Access MODE for SITEs and VEHICLE MEETING POINTs. Also used for TRANSFER and if in OTHER LEG of the TRIP a monomodal non-public transport is used.
 type AccessMode struct {
-	Value AccessModeEnumeration `xml:"value" json:"value"`
+	Value AccessModeEnumeration `xml:",chardata" json:"value"`
 }
 
 // VehicleMode represents the VehicleMode element
 // VEHICLE MODE: a characterisation of the operation according to the means of transport (bus, tram, metro, train, ferry, ship).
 type VehicleMode struct {
-	Value AllModesEnumeration `xml:"value" json:"value"`
+	Value AllModesEnumeration `xml:",chardata" json:"value"`
 }
 
 // RoadVehicleMode represents the RoadVehicleMode element
 // Road Vehicle MODE: a characterisation of the operation according to the means of transport (bus, tram, coach).
 type RoadVehicleMode struct {
-	Value AllModesEnumeration `xml:"value" json:"value"`
+	Value AllModesEnumeration `xml:",chardata" json:"value"`
 }
 
 // AllVehicleModes represents the AllVehicleModes element
 // All MODEs including vehicle transport and self drive.
 type AllVehicleModes struct {
-	Value AllVehicleModesOfTransportEnumeration `xml:"value" json:"value"`
+	Value AllVehicleModesOfTransportEnumeration `xml:",chardata" json:"value"`
 }
 
 // OpenTransportModeRef represents the OpenTransportModeRef element
@@ -12894,72 +12894,72 @@ type TransportSubmode struct {
 // TPEG pti02 Rail submodes loc13.
 // 			See also See ERA B.4.7009 - Name: Item description code.
 type RailSubmode struct {
-	Value RailSubmodeEnumeration `xml:"value" json:"value"`
+	Value RailSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // CoachSubmode represents the CoachSubmode element
 // TPEG pti03 Coach submodes.
 type CoachSubmode struct {
-	Value CoachSubmodeEnumeration `xml:"value" json:"value"`
+	Value CoachSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // MetroSubmode represents the MetroSubmode element
 // TPEG pti04 Metro submodes.
 type MetroSubmode struct {
-	Value MetroSubmodeEnumeration `xml:"value" json:"value"`
+	Value MetroSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // BusSubmode represents the BusSubmode element
 // TPEG pti05 Bus submodes.
 type BusSubmode struct {
-	Value BusSubmodeEnumeration `xml:"value" json:"value"`
+	Value BusSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // TramSubmode represents the TramSubmode element
 // TPEG pti06 Tram submodes.
 type TramSubmode struct {
-	Value TramSubmodeEnumeration `xml:"value" json:"value"`
+	Value TramSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // WaterSubmode represents the WaterSubmode element
 // TPEG pti07 Water submodes.
 type WaterSubmode struct {
-	Value WaterSubmodeEnumeration `xml:"value" json:"value"`
+	Value WaterSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // AirSubmode represents the AirSubmode element
 // TPEG pti08 Air submodes.
 type AirSubmode struct {
-	Value AirSubmodeEnumeration `xml:"value" json:"value"`
+	Value AirSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // TelecabinSubmode represents the TelecabinSubmode element
 // TPEG pti09 Telecabin submodes.
 type TelecabinSubmode struct {
-	Value TelecabinSubmodeEnumeration `xml:"value" json:"value"`
+	Value TelecabinSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // FunicularSubmode represents the FunicularSubmode element
 // TPEG pti10 Funicular submodes.
 type FunicularSubmode struct {
-	Value FunicularSubmodeEnumeration `xml:"value" json:"value"`
+	Value FunicularSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // TaxiSubmode represents the TaxiSubmode element
 // TPEG pti11 Taxi submodes.
 type TaxiSubmode struct {
-	Value TaxiSubmodeEnumeration `xml:"value" json:"value"`
+	Value TaxiSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // SelfDriveSubmode represents the SelfDriveSubmode element
 // TPEG pti12 SelfDrive submodes. (NB Use  SimpleVehicleType / Vehicle Category to describe specific type)
 type SelfDriveSubmode struct {
-	Value SelfDriveSubmodeEnumeration `xml:"value" json:"value"`
+	Value SelfDriveSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // SnowAndIceSubmode represents the SnowAndIceSubmode element
 type SnowAndIceSubmode struct {
-	Value SnowAndIceSubmodeEnumeration `xml:"value" json:"value"`
+	Value SnowAndIceSubmodeEnumeration `xml:",chardata" json:"value"`
 }
 
 // TransportModesRelStructure represents the transportModes_RelStructure element
@@ -16439,7 +16439,7 @@ type OnboardStay struct {
 // AccessFacility represents the AccessFacility element
 // Classification of SITE  ACCESS FACILITY.
 type AccessFacility struct {
-	Value AccessFacilityEnumeration `xml:"value" json:"value"`
+	Value AccessFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // AccessFacilityList represents the AccessFacilityList element
@@ -16451,7 +16451,7 @@ type AccessFacilityList struct {
 // VehicleAccessFacility represents the VehicleAccessFacility element
 // Classification of VEHICLE ACCESS FACILITY.
 type VehicleAccessFacility struct {
-	Value VehicleAccessFacilityEnumeration `xml:"value" json:"value"`
+	Value VehicleAccessFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // VehicleAccessFacilityList represents the VehicleAccessFacilityList element
@@ -16463,7 +16463,7 @@ type VehicleAccessFacilityList struct {
 // AccessibilityInfoFacility represents the AccessibilityInfoFacility element
 // Classification of ACCESSIBILITY INFO FACILITY type - TPEG pti23.
 type AccessibilityInfoFacility struct {
-	Value AccessibilityInfoFacilityEnumeration `xml:"value" json:"value"`
+	Value AccessibilityInfoFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // AccessibilityInfoFacilityList represents the AccessibilityInfoFacilityList element
@@ -16475,7 +16475,7 @@ type AccessibilityInfoFacilityList struct {
 // AccessibilityTool represents the AccessibilityTool element
 // Classification of ACCESSIBILITY TOOLs.
 type AccessibilityTool struct {
-	Value AccessibilityToolEnumeration `xml:"value" json:"value"`
+	Value AccessibilityToolEnumeration `xml:",chardata" json:"value"`
 }
 
 // AccessibilityToolList represents the AccessibilityToolList element
@@ -16487,7 +16487,7 @@ type AccessibilityToolList struct {
 // AccommodationAccess represents the AccommodationAccess element
 // Classification of ACCOMMODATION ACCESS type -
 type AccommodationAccess struct {
-	Value AccommodationAccessEnumeration `xml:"value" json:"value"`
+	Value AccommodationAccessEnumeration `xml:",chardata" json:"value"`
 }
 
 // AccommodationAccessList represents the AccommodationAccessList element
@@ -16499,7 +16499,7 @@ type AccommodationAccessList struct {
 // AccommodationFacility represents the AccommodationFacility element
 // Classification of ACCOMMODATION FACILITY type - TPEG pti23.
 type AccommodationFacility struct {
-	Value AccommodationFacilityEnumeration `xml:"value" json:"value"`
+	Value AccommodationFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // AccommodationFacilityList represents the AccommodationFacilityList element
@@ -16511,7 +16511,7 @@ type AccommodationFacilityList struct {
 // AssistanceFacility represents the AssistanceFacility element
 // Classification of ASSISTANCE FACILITY.
 type AssistanceFacility struct {
-	Value AssistanceFacilityEnumeration `xml:"value" json:"value"`
+	Value AssistanceFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // AssistanceFacilityList represents the AssistanceFacilityList element
@@ -16523,19 +16523,19 @@ type AssistanceFacilityList struct {
 // BerthFacility represents the BerthFacility element
 // Classification of BERTHFACILITY type - TPEG pti23.
 type BerthFacility struct {
-	Value BerthFacilityEnumeration `xml:"value" json:"value"`
+	Value BerthFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // BoardingPermission represents the BoardingPermission element
 // Classification of BOARDING PERMISSION - UIC 7161 Code list.
 type BoardingPermission struct {
-	Value BoardingPermissionEnumeration `xml:"value" json:"value"`
+	Value BoardingPermissionEnumeration `xml:",chardata" json:"value"`
 }
 
 // BookingProcessFacility represents the BookingProcessFacility element
 // Classification of BOOKING PROCESS FACILITY type - UIC 7037 Code list.
 type BookingProcessFacility struct {
-	Value BookingProcessEnumeration `xml:"value" json:"value"`
+	Value BookingProcessEnumeration `xml:",chardata" json:"value"`
 }
 
 // BookingProcessFacilityList represents the BookingProcessFacilityList element
@@ -16547,7 +16547,7 @@ type BookingProcessFacilityList struct {
 // CouchetteFacility represents the CouchetteFacility element
 // Classification of COUCHETTE FACILITY type - TPEG pti23.
 type CouchetteFacility struct {
-	Value CouchetteFacilityEnumeration `xml:"value" json:"value"`
+	Value CouchetteFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // CouchetteFacilityList represents the CouchetteFacilityList element
@@ -16559,7 +16559,7 @@ type CouchetteFacilityList struct {
 // EmergencyService represents the EmergencyService element
 // Classification of EMERGENCY SERVICE FACILITY.
 type EmergencyService struct {
-	Value EmergencyServiceEnumeration `xml:"value" json:"value"`
+	Value EmergencyServiceEnumeration `xml:",chardata" json:"value"`
 }
 
 // EmergencyServiceList represents the EmergencyServiceList element
@@ -16571,7 +16571,7 @@ type EmergencyServiceList struct {
 // FamilyFacility represents the FamilyFacility element
 // Classification of FAMILY FACILITies.
 type FamilyFacility struct {
-	Value FamilyFacilityEnumeration `xml:"value" json:"value"`
+	Value FamilyFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // FamilyFacilityList represents the FamilyFacilityList element
@@ -16583,7 +16583,7 @@ type FamilyFacilityList struct {
 // FareClass represents the FareClass element
 // Classification of FARE CLASSes.
 type FareClass struct {
-	Value FareClassEnumeration `xml:"value" json:"value"`
+	Value FareClassEnumeration `xml:",chardata" json:"value"`
 }
 
 // FareClasses represents the FareClasses element
@@ -16595,13 +16595,13 @@ type FareClasses struct {
 // GroupBookingFacility represents the GroupBookingFacility element
 // Classification of GROUP FACILITY type - TPEG pti23.
 type GroupBookingFacility struct {
-	Value GroupBookingEnumeration `xml:"value" json:"value"`
+	Value GroupBookingEnumeration `xml:",chardata" json:"value"`
 }
 
 // HireFacility represents the HireFacility element
 // Classification of Hire FACILITY.
 type HireFacility struct {
-	Value HireFacilityEnumeration `xml:"value" json:"value"`
+	Value HireFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // HireFacilityList represents the HireFacilityList element
@@ -16613,7 +16613,7 @@ type HireFacilityList struct {
 // LuggageCarriageFacility represents the LuggageCarriageFacility element
 // Classification of LUGGAGE CARRIAGE FACILITY type.
 type LuggageCarriageFacility struct {
-	Value LuggageCarriageEnumeration `xml:"value" json:"value"`
+	Value LuggageCarriageEnumeration `xml:",chardata" json:"value"`
 }
 
 // LuggageCarriageFacilityList represents the LuggageCarriageFacilityList element
@@ -16625,7 +16625,7 @@ type LuggageCarriageFacilityList struct {
 // LuggageLockerFacility represents the LuggageLockerFacility element
 // Classification of LUGGAGE LOCKER FACILITY type.
 type LuggageLockerFacility struct {
-	Value LuggageLockerFacilityEnumeration `xml:"value" json:"value"`
+	Value LuggageLockerFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // LuggageLockerFacilityList represents the LuggageLockerFacilityList element
@@ -16637,7 +16637,7 @@ type LuggageLockerFacilityList struct {
 // LuggageServiceFacility represents the LuggageServiceFacility element
 // Classification of LUGGAGE SERVICE FACILITies.
 type LuggageServiceFacility struct {
-	Value LuggageServiceFacilityEnumeration `xml:"value" json:"value"`
+	Value LuggageServiceFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // LuggageServiceFacilityList represents the LuggageServiceFacilityList element
@@ -16649,7 +16649,7 @@ type LuggageServiceFacilityList struct {
 // MealFacility represents the MealFacility element
 // Classification of MEAL FACILITY type.
 type MealFacility struct {
-	Value MealFacilityEnumeration `xml:"value" json:"value"`
+	Value MealFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // MealFacilityList represents the MealFacilityList element
@@ -16661,7 +16661,7 @@ type MealFacilityList struct {
 // MobilityFacility represents the MobilityFacility element
 // Classification of MOBILITY FACILITY.
 type MobilityFacility struct {
-	Value MobilityFacilityEnumeration `xml:"value" json:"value"`
+	Value MobilityFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // MobilityFacilityList represents the MobilityFacilityList element
@@ -16673,7 +16673,7 @@ type MobilityFacilityList struct {
 // MoneyFacility represents the MoneyFacility element
 // Classification of MONEY FACILITY.
 type MoneyFacility struct {
-	Value MoneyFacilityEnumeration `xml:"value" json:"value"`
+	Value MoneyFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // MoneyFacilityList represents the MoneyFacilityList element
@@ -16697,7 +16697,7 @@ type NuisanceFacilityList struct {
 // ParkingFacility represents the ParkingFacility element
 // Classification of PARKING FACILITY.
 type ParkingFacility struct {
-	Value ParkingFacilityEnumeration `xml:"value" json:"value"`
+	Value ParkingFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // ParkingFacilityList represents the ParkingFacilityList element
@@ -16709,7 +16709,7 @@ type ParkingFacilityList struct {
 // CarServiceFacility represents the CarServiceFacility element
 // Classification of CAR SERVICE FACILITY.
 type CarServiceFacility struct {
-	Value CarServiceFacilityEnumeration `xml:"value" json:"value"`
+	Value CarServiceFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // CarServiceFacilityList represents the CarServiceFacilityList element
@@ -16721,7 +16721,7 @@ type CarServiceFacilityList struct {
 // PassengerInformationFacility represents the PassengerInformationFacility element
 // Classification of PASSENGER INFO FACILITY type - TPEG pti23.
 type PassengerInformationFacility struct {
-	Value PassengerInformationFacilityEnumeration `xml:"value" json:"value"`
+	Value PassengerInformationFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // PassengerInformationFacilityList represents the PassengerInformationFacilityList element
@@ -16733,7 +16733,7 @@ type PassengerInformationFacilityList struct {
 // PassengerCommsFacility represents the PassengerCommsFacility element
 // Classification of PASSENGER COMMS FACILITY type - TPEG pti23.
 type PassengerCommsFacility struct {
-	Value PassengerCommsFacilityEnumeration `xml:"value" json:"value"`
+	Value PassengerCommsFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // PassengerCommsFacilityList represents the PassengerCommsFacilityList element
@@ -16745,7 +16745,7 @@ type PassengerCommsFacilityList struct {
 // CateringFacility represents the CateringFacility element
 // Classification of CATERING FACILITY type - TPEG pti23.
 type CateringFacility struct {
-	Value CateringFacilityEnumeration `xml:"value" json:"value"`
+	Value CateringFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // CateringFacilityList represents the CateringFacilityList element
@@ -16757,7 +16757,7 @@ type CateringFacilityList struct {
 // ServiceReservationFacility represents the ServiceReservationFacility element
 // Classification of RESERVATION FACILITY type - UIC 7037 Code list.
 type ServiceReservationFacility struct {
-	Value ReservationEnumeration `xml:"value" json:"value"`
+	Value ReservationEnumeration `xml:",chardata" json:"value"`
 }
 
 // ServiceReservationFacilityList represents the ServiceReservationFacilityList element
@@ -16769,7 +16769,7 @@ type ServiceReservationFacilityList struct {
 // ReservedSpaceFacility represents the ReservedSpaceFacility element
 // Classification of RESERVED SPACE FACILITY.
 type ReservedSpaceFacility struct {
-	Value ReservedSpaceFacilityEnumeration `xml:"value" json:"value"`
+	Value ReservedSpaceFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // ReservedSpaceFacilityList represents the ReservedSpaceFacilityList element
@@ -16781,7 +16781,7 @@ type ReservedSpaceFacilityList struct {
 // RetailFacility represents the RetailFacility element
 // Classification of RETAIL FACILITY.
 type RetailFacility struct {
-	Value RetailFacilityEnumeration `xml:"value" json:"value"`
+	Value RetailFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // RetailFacilityList represents the RetailFacilityList element
@@ -16793,7 +16793,7 @@ type RetailFacilityList struct {
 // SafetyFacility represents the SafetyFacility element
 // Classification of SAFETY FACILITY type - TPEG pti23.
 type SafetyFacility struct {
-	Value SafetyFacilityEnumeration `xml:"value" json:"value"`
+	Value SafetyFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // SafetyFacilityList represents the SafetyFacilityList element
@@ -16805,7 +16805,7 @@ type SafetyFacilityList struct {
 // SanitaryFacility represents the SanitaryFacility element
 // Classification of Sanitary FACILITY type - TPEG pti23.
 type SanitaryFacility struct {
-	Value SanitaryFacilityEnumeration `xml:"value" json:"value"`
+	Value SanitaryFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // SanitaryFacilityList represents the SanitaryFacilityList element
@@ -16817,19 +16817,19 @@ type SanitaryFacilityList struct {
 // GenderLimitation represents the GenderLimitation element
 // Classification GENDER LIMITATION.
 type GenderLimitation struct {
-	Value GenderLimitationEnumeration `xml:"value" json:"value"`
+	Value GenderLimitationEnumeration `xml:",chardata" json:"value"`
 }
 
 // Staffing represents the Staffing element
 // Classification of STAFFING.
 type Staffing struct {
-	Value StaffingEnumeration `xml:"value" json:"value"`
+	Value StaffingEnumeration `xml:",chardata" json:"value"`
 }
 
 // ScopeOfTicket represents the ScopeOfTicket element
 // Classification of SCOPEs of TICKET, eg national international.
 type ScopeOfTicket struct {
-	Value ScopeOfTicketEnumeration `xml:"value" json:"value"`
+	Value ScopeOfTicketEnumeration `xml:",chardata" json:"value"`
 }
 
 // ScopeOfTicketList represents the ScopeOfTicketList element
@@ -16841,7 +16841,7 @@ type ScopeOfTicketList struct {
 // TicketingFacility represents the TicketingFacility element
 // Classification of TICKETING FACILITY type - eg TicketOffice, Machine, etc.
 type TicketingFacility struct {
-	Value TicketingFacilityEnumeration `xml:"value" json:"value"`
+	Value TicketingFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // TicketingFacilityList represents the TicketingFacilityList element
@@ -16853,7 +16853,7 @@ type TicketingFacilityList struct {
 // TicketingServiceFacility represents the TicketingServiceFacility element
 // Classification of TICKETING FACILITY type - TPEG pti23.
 type TicketingServiceFacility struct {
-	Value TicketingServiceFacilityEnumeration `xml:"value" json:"value"`
+	Value TicketingServiceFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // TicketingServiceFacilityList represents the TicketingServiceFacilityList element
@@ -16865,13 +16865,13 @@ type TicketingServiceFacilityList struct {
 // UicTrainRate represents the UicTrainRate element
 // Classification of UIC Rate Type FACILITY type - UIC 5163 Code list.
 type UicTrainRate struct {
-	Value UicRateTypeEnumeration `xml:"value" json:"value"`
+	Value UicRateTypeEnumeration `xml:",chardata" json:"value"`
 }
 
 // UicProductCharacteristic represents the UicProductCharacteristic element
 // Classification of UIC Product Characteristics type - UIC 7139 Code list.
 type UicProductCharacteristic struct {
-	Value UicProductCharacteristicEnumeration `xml:"value" json:"value"`
+	Value UicProductCharacteristicEnumeration `xml:",chardata" json:"value"`
 }
 
 // UicProductCharacteristicList represents the UicProductCharacteristicList element
@@ -16883,7 +16883,7 @@ type UicProductCharacteristicList struct {
 // MedicalFacility represents the MedicalFacility element
 // Classification of MEDICAL FACILITY type - TPEG pti23.
 type MedicalFacility struct {
-	Value MedicalFacilityEnumeration `xml:"value" json:"value"`
+	Value MedicalFacilityEnumeration `xml:",chardata" json:"value"`
 }
 
 // MedicalFacilityList represents the MedicalFacilityList element
@@ -18506,7 +18506,7 @@ type ModeRestrictionAssessmentRefStructure struct {
 // DirectionType represents the DirectionType element
 // A Direction of a ROUTE. One of a restricted set of values. Default is "Outbound"
 type DirectionType struct {
-	Value DirectionTypeEnumeration `xml:"value" json:"value"`
+	Value DirectionTypeEnumeration `xml:",chardata" json:"value"`
 }
 
 // DirectionRef represents the DirectionRef element
@@ -24633,7 +24633,7 @@ type DataObjectCapabilityRequestPolicyStructure struct {
 // DataObjectServicePermissionStructure represents the DataObjectServicePermissionStructure element
 // Type for Monitoring Service Permission.
 type DataObjectServicePermissionStructure struct {
-	Value float32 `xml:"value" json:"value"`
+	Value float32 `xml:",chardata" json:"value"`
 }
 
 // DataObjectRequest represents the DataObjectRequest element
@@ -44634,7 +44634,7 @@ type QualityStructureFactorsRelStructure struct {
 type QualityStructureFactorVersionStructure struct {
 	FareStructureFactorVersionStructure
 	// Value associated with QUALITY STRUCTURE FACTOR.
-	Value *interface{} `xml:"Value,omitempty" json:"Value,omitempty"`
+	Value *interface{} `xml:",chardata" json:"value"`
 	// PRICEs for QUALITY STRUCTURE FACTOR.
 	Prices *QualityStructureFactorPricesRelStructure `xml:"prices,omitempty" json:"prices,omitempty"`
 }
@@ -51177,7 +51177,7 @@ type PublicationDeliveryStructure struct {
 // ParticipantRef represents the ParticipantRef element
 // Identifier of system requesting Data.
 type ParticipantRef struct {
-	Value string `xml:"value" json:"value"`
+	Value string `xml:",chardata" json:"value"`
 }
 
 // PublicationRequest represents the PublicationRequest element
