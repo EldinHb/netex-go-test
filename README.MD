@@ -1,1 +1,1 @@
-Replace netexret.xml with your own file. Run with `go run main.go`.
+Run with `go run main.go`.

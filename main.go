@@ -10,10 +10,11 @@ import (
 )
 
 func main() {
-	fmt.Println("Loading and unmarshalling netexret.xml...")
+	fmt.Println("Loading and unmarshalling NeTEx_HTM_test_20210301.xml...")
 
 	// Open the XML file
-	file, err := os.Open("./netexret.xml")
+	file, err := os.Open("./NeTEx_HTM_test_20210301.xml")
+	// file, err := os.Open("./netexret.xml")
 	if err != nil {
 		fmt.Printf("Error opening file: %v\n", err)
 		return
@@ -46,6 +47,14 @@ func main() {
 
 	if publicationDelivery.DataObjects != nil {
 		fmt.Printf("Data Objects present: %+v\n", publicationDelivery.DataObjects)
+	}
+
+	for _, choice := range publicationDelivery.DataObjects.Choice {
+		for _, frame := range choice.CompositeFrame.Frames.CommonFrame {
+			if frame.ServiceFrame != nil {
+				fmt.Printf("Destination %+v\n", frame.ServiceFrame.DestinationDisplays.DestinationDisplay[0].Name.Value)
+			}
+		}
 	}
 
 	fmt.Println("XML unmarshalling completed successfully!")
