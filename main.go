@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"log"
 	"os"
 
 	"gotest/netex"
@@ -49,13 +50,18 @@ func main() {
 		fmt.Printf("Data Objects present: %+v\n", publicationDelivery.DataObjects)
 	}
 
-	for _, choice := range publicationDelivery.DataObjects.Choice {
-		for _, frame := range choice.CompositeFrame.Frames.CommonFrame {
-			if frame.ServiceFrame != nil {
-				fmt.Printf("Destination %+v\n", frame.ServiceFrame.DestinationDisplays.DestinationDisplay[0].Name.Value)
-			}
-		}
+	marshaled, err := xml.MarshalIndent(publicationDelivery, "", "  ")
+	if err != nil {
+		log.Fatalf("Error marshalling back to XML: %v", err)
 	}
+
+	// save in file
+	err = os.WriteFile("output.xml", marshaled, 0644)
+	if err != nil {
+		log.Fatalf("Error writing to file: %v", err)
+	}
+
+	// Print the marshalled XML to stdout
 
 	fmt.Println("XML unmarshalling completed successfully!")
 }
